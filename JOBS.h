@@ -7,5 +7,5 @@ enum class JOBS
 	JOB_WIZARD,
 	JOB_ARCHER,
 	JOB_THIEF,
-
+	JOB_EXIT
 };

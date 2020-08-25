@@ -147,10 +147,12 @@
     <ClInclude Include="Item.h" />
     <ClInclude Include="Potion.h" />
     <ClInclude Include="STORE_MENU.h" />
+    <ClInclude Include="SYSTEM_MENU.h" />
     <ClInclude Include="Trophy.h" />
     <ClInclude Include="JOBS.h" />
     <ClInclude Include="Monster.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Warrior.h" />
     <ClInclude Include="Weapon.h" />
   </ItemGroup>
   <ItemGroup>
@@ -160,6 +162,7 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Potion.cpp" />
+    <ClCompile Include="Warrior.cpp" />
     <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

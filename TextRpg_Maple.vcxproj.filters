@@ -48,6 +48,12 @@
     <ClInclude Include="Potion.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Warrior.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="SYSTEM_MENU.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Green_Snail.cpp">
@@ -69,6 +75,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Potion.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Warrior.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

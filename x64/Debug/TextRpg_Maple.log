@@ -1,2 +1,6 @@
-﻿  Main.cpp
+﻿  Armor.cpp
+  Inventory.cpp
+  Main.cpp
+  Player.cpp
+  Warrior.cpp
   TextRpg_Maple.vcxproj -> C:\Users\user\source\repos\TextRpg_Maple_0824\x64\Debug\TextRpg_Maple.exe
