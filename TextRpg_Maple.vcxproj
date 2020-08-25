@@ -142,6 +142,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Armor.h" />
+    <ClInclude Include="git.h" />
     <ClInclude Include="Green_Snail.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item.h" />
