@@ -9,6 +9,7 @@
 
 int main()
 {
+	//is this really change?
 	using namespace std;
 	const int Weapon_Number = 5;
 	const int Armor_Number = 5;
