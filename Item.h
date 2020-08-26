@@ -13,12 +13,23 @@ private:
 
 public:
 	
-	Item(int len);
+	Item(int len=0);
 
 	T& operator [] (int idx);
 	T operator [] (int idx) const;
 	int GetArrLen() const;
 	~Item() {};
+
+	friend std::ostream& operator << ( std::ostream& out, const std::vector<T>& iarr )
+	{
+		out << iarr;
+
+		return out;
+	}
+	
+	std::vector<T> getiarr() const;
+	void setiarr();
+
 
 };
 
@@ -50,12 +61,22 @@ T Item<T>::operator [] (int idx) const
 	}
 
 	return iarr[idx];
-
 }
 
 template<typename T>
 int Item<T>::GetArrLen() const
 {
 	return  iarr.size();
-
 }
+
+template<typename T>
+ std::vector<T> Item<T>::getiarr() const
+{
+	return iarr;
+}
+
+ template<typename T>
+void Item<T>::setiarr()
+ {
+
+ }

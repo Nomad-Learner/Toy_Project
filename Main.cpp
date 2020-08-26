@@ -6,15 +6,18 @@
 #include"STORE_MENU.h"
 #include"JOBS.h"
 #include"SYSTEM_MENU.h"
-
+#include "Warrior.h"
+#include<limits>
 int main()
 {
-	//is this really change?
+
 	using namespace std;
+
+	/*==============================Create the item================================*/
 	const int Weapon_Number = 5;
 	const int Armor_Number = 5;
 	const int Potion_Number = 2;
-	
+
 	/*************Weapon 객체 저장********************/
 	Item<Weapon> weaponArr(Weapon_Number); //기본 생성자가 없어서 그런거였군
 	//값을 넣어준다. 여기 인수가 9개다
@@ -37,28 +40,8 @@ int main()
 	Item<Potion> potionArr(Potion_Number);
 	potionArr[0] = Potion("체력 포션", 300, 0, 1);
 	potionArr[1] = Potion("마나 포션", 0, 300, 1);
-
-	//for (auto& ele : weaponArr)
-	//{
-
-	//} 이 방법 봤던거 같은데 기억이 안나네
-
-	for (int i = 0; i < Weapon_Number; i++)
-	{
-		cout << weaponArr[i] << endl;
-	}
-
-
-	for (int i = 0; i < Armor_Number; i++)
-	{
-		cout << armorArr[i] << endl;
-	}
-
-	for (int i = 0; i < Potion_Number; i++)
-	{
-		cout << potionArr[i] << endl;
-	}
-
+	Warrior W1;
+	
 	while (true)
 	{
 		//system("cls");
@@ -82,21 +65,25 @@ int main()
 			cout << "End the program" << endl;
 			break;
 		}
-		
+
+		string iname; //input name
+		cin.ignore(numeric_limits<streamsize>::max(),'\n'); //cin 때문에 버퍼에 남아있던 엔터키 거르는 장치
 		//캐릭터 선택 switch문
 		switch (static_cast<JOBS>(inumber))
 		{
-		case JOBS::JOB_WARRIOR :
+			case JOBS::JOB_WARRIOR :
+		
 			
-			cout << "전사 캐릭터가 생성 완료 되었습니다!" << endl;
-
+				cout << "캐릭터 이름을 입력해 주세요" << endl;
+				getline(cin, iname);
+				W1.setName(iname);
+				cout << "전사 캐릭터가 생성 완료 되었습니다!" << endl;
+				
 			break;
-
+		
 		case JOBS::JOB_WIZARD:
 			
 			cout << "마법사 캐릭터가 생성 완료 되었습니다!" << endl;
-
-
 
 			break;
 
@@ -111,20 +98,22 @@ int main()
 			cout << "도적 캐릭터가 생성 완료 되었습니다!" << endl;
 
 			break;
-
+			
 		}
 
 		break;
-	}//캐릭터 생성 while문 끝
-	
+	}//캐릭터 생성 while문 
+	W1.ShowInventory(W1.getInventory());
+
 	while (true) //Making Menu while
 	{
+
 		//system("cls");
 		std::cout << "==========================Lobby================================" << std::endl;
 		std::cout << "1. Map" << std::endl;
 		std::cout << "2. Store" << std::endl;
 		std::cout << "3. Inventory" << std::endl;
-		std::cout << "4. Exit Game" << std::endl;
+		std::cout << "5. END Game " << std::endl;
 		int iMenu; //input Menu
 		cin >> iMenu;
 
@@ -135,28 +124,42 @@ int main()
 			cout << "Wrong input please try again" << endl;
 		}
 
+		//게임 종료
 		if (static_cast<SYSTEM_MENU>(iMenu) == SYSTEM_MENU::SYSTEM_EXIT)
 		{
-			cout << "End the game" << endl;
-			break;
+			cout << "END GAME" << endl;
+			break; 
 		}
-
+		//선택 창
+		
 		switch (static_cast<SYSTEM_MENU>(iMenu))
 		{
 		case SYSTEM_MENU::SYSTEM_MAP :
 
+
+
+
+			break;
+
+		case SYSTEM_MENU::SYSTEM_STORE:
+
+			break;
+
+
+
+		case SYSTEM_MENU::SYSTEM_INVENTORY:
+
 			break;
 
 
 
 
-		}
+		}//switch 끝
 
-
-
-
-
+	
 	} //Making Menu while
+
+		
 
 	return 0;
 }
